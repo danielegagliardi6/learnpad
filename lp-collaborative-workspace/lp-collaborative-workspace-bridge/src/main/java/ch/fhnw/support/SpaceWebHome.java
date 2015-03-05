@@ -106,7 +106,7 @@ public class SpaceWebHome {
 		xwikidoc.appendChild(version);
 
 		Element title = newDocument.createElement("title");
-		title.setTextContent(spaceName);
+		title.setTextContent("Home Page: " + spaceName);
 		xwikidoc.appendChild(title);
 
 		Element updateWatchlist = newDocument.createElement("comment");
