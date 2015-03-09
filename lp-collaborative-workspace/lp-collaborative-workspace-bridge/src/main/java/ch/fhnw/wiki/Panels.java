@@ -83,12 +83,12 @@ public class Panels {
 			if(attributes.getAttributes().getNamedItem("class").toString().equals("class=\"Data Association\"")){
 
 				contentFunction = contentFunction +  
-						"\n#if($doc == \"IMPORTED." + taskName + "\")" +
+						"\n#if($doc == \"" + spaceName + "." + taskName + "\")" +
 						"OUT:<br/>" +
 						"\n<a href=\"" + documentName + "\"><span class=\"application-img\">image:http://www.iliumsoft.com/support/admin/images/gateway/shared-images/ico-pdf-export.png </span> " +
 						"<span class=\"application-label\">" + documentName + "</a><br/>" +
 						"\n#end" +
-						"\n#if($doc == \"IMPORTED." + documentName + "\")" +
+						"\n#if($doc == \"" + spaceName + "." + documentName + "\")" +
 						"IN:<br/>" + 
 						"\n<a href=\"" + taskName + "\"><span class=\"application-img\">image:http://www.iliumsoft.com/support/admin/images/gateway/shared-images/ico-pdf-export.png </span> " +
 						"<span class=\"application-label\">" + taskName + "</a><br/>" +
@@ -108,7 +108,7 @@ public class Panels {
 		"{{velocity}}"+
 		"\n{{html wiki=\"true\"}}" +
 		"\n#panelheader('DOCUMENTS NEEDED')" + 
-		"\n#if($doc == \"IMPORTED." + documentDescription + "\")" +
+		"\n#if($doc == \"" + spaceName + "." + documentDescription + "\")" +
 		"\n<a href=\"" + documentDescription + "\"><span class=\"application-img\">image:http://www.iliumsoft.com/support/admin/images/gateway/shared-images/ico-pdf-export.png </span> <span class=\"application-label\">" + documentDescription + "</a>" +
 		"\n#else" + 
 		"\nNESSUN DOCUMENTO COLLEGATO" +
