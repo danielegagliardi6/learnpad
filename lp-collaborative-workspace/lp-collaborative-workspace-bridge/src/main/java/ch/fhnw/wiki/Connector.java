@@ -218,7 +218,8 @@ public class Connector {
 									"</form>\n" +
 
 									"\n#if($xwiki.hasAccessLevel('admin')) " +
-									"\nFOR ADMIN ONLY:" + textAnswer.getTextContent() + " : [[" + pagina + ">>doc:" + pagina + "||title=\"Next Step\"]]" +
+									"\n\n-------------------------------\n\n"
+									+ "FOR ADMIN ONLY: " + textAnswer.getTextContent() + " : [[" + pagina + ">>doc:" + pagina + "||title=\"Next Step\"]]" +
 									"\n#end" +
 
 									"\n{{/html}}\n\n";
