@@ -73,7 +73,7 @@ public class Connector {
 						nextLink = nextLink + linkMail + ""
 								+ "" //this was the missing |
 								//	+ textAnswer.getTextContent() + " : [[" + pagina + ">>doc:" + pagina + "||title=\"Next Step\"]]" + "<br/>"; //TODO change in \n
-								
+
 								+ "\n<form action=\"" + pagina + "\">"+
 								"\n" + textAnswer.getTextContent().toString() + ": <input type=\"submit\" value=\"Next Activity \">" +
 								"\n</form>";
@@ -219,7 +219,7 @@ public class Connector {
 
 									"\n#if($xwiki.hasAccessLevel('admin')) " +
 									"\n\n-------------------------------\n\n"
-									+ "FOR ADMIN ONLY: " + textAnswer.getTextContent() + " : [[" + pagina + ">>doc:" + pagina + "||title=\"Next Step\"]]" +
+									+"FOR ADMIN ONLY: " + textAnswer.getTextContent() + " : [[" + pagina + ">>doc:" + pagina + "||title=\"Next Step\"]]" +
 									"\n#end" +
 
 									"\n{{/html}}\n\n";
@@ -265,7 +265,8 @@ public class Connector {
 									"</form>\n" +
 
 									"\n#if($xwiki.hasAccessLevel('admin')) " +
-									"\nFOR ADMIN ONLY:" + textAnswer.getTextContent() + " : [[" + pagina + ">>doc:" + pagina + "||title=\"Next Step\"]]" +
+									"\n\n-------------------------------\n\n" +
+									"FOR ADMIN ONLY:" + textAnswer.getTextContent() + " : [[" + pagina + ">>doc:" + pagina + "||title=\"Next Step\"]]" +
 									"\n#end" +
 
 									"\n{{/html}}\n\n"  ;
