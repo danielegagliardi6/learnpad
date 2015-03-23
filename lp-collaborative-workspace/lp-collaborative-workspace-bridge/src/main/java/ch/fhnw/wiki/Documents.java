@@ -35,7 +35,7 @@ public class Documents {
 		int arrayLength=0;
 		
 		try {
-			// create xwiki pages for every file cool !
+			// create xwiki pages for every file
 			String oldName;
 			String nameClean;
 			String type;
@@ -1107,21 +1107,22 @@ public class Documents {
 				 */
 
 				// INSERT OF THE CONTENT, OBJECT DESCRIPTION FROM THE ADOXX FILE
-				String testContent = "";
+				String testContent = "{{html}}";
 				//NodeList connector = doc.getElementsByTagName("CONNECTOR");
 
 				for (int j =0; j<elementi.getLength();j++){
 					if(elementi.item(j).getAttributes().getNamedItem("name").toString().equals("name=\"Description\"")){
 						// insert adoxx description
-						testContent = testContent + "**Description:**\n\n" +  elementi.item(j).getTextContent() + "\n\n";
+						testContent = testContent + "<b>Description:</b><br/><br/>" +  elementi.item(j).getTextContent() + "<br/><br/>";
 
 
 					}else if ( elementi.item(j).getAttributes().getNamedItem("name").toString().equals("name=\"Referenced document\"")){
-						testContent  = testContent +  "**Related Document:**\n\n" + elementi.item(j).getTextContent().toString().replaceAll("\\\\\"", "").replaceAll("\"", "").replaceAll("ITEM <automatically> param:", "").replaceAll("ITEM Winword param:", "")
+						testContent  = testContent +  "<b>Related Document:</b><br/>" + elementi.item(j).getTextContent().toString().replaceAll("\\\\\"", "").replaceAll("\"", "").replaceAll("ITEM <automatically> param:", "").replaceAll("ITEM Winword param:", "")
 								.replaceAll("ITEM Powerpnt param:","").replaceAll("ITEM Excel param:", "").replaceAll("\\\\\\\\", "\\\\");
 					}
 
 				}
+				testContent = testContent + "{{/html}}";
 
 				content.setTextContent(testContent);
 

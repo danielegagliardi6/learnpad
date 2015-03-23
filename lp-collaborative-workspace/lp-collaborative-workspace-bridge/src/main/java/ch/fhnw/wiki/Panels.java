@@ -45,9 +45,9 @@ public class Panels {
 		{
 			public InputSource resolveEntity(String publicId, String systemId)
 					throws SAXException, IOException
-					{
+			{
 				return new InputSource(new StringReader(""));
-					}
+			}
 		});
 
 
@@ -63,8 +63,8 @@ public class Panels {
 
 
 		String contentFunction ="{{velocity}}"+
-				"\n{{html wiki=\"true\"}}" +
-				"\n#panelheader('" + spaceName + " RESOURCES FOR YOUR CONTEXT')";
+				"{{html wiki=\"true\"}}" +
+				"\n#panelheader('Resources for: " + spaceName + "')";
 		for(int i=0; i<arrayLength;i++){
 
 			//i++;
@@ -85,12 +85,29 @@ public class Panels {
 				contentFunction = contentFunction +  
 						"\n#if($doc == \"" + spaceName + "." + taskName + "\")" +
 						"OUT:<br/>" +
-						"\n<a href=\"" + documentName + "\"><span class=\"application-img\">image:http://www.iliumsoft.com/support/admin/images/gateway/shared-images/ico-pdf-export.png </span> " +
+						"\n<a href=\"" + documentName + "\"> ";
+
+				if(to.getAttributes().getNamedItem("class").toString().equals("class=\"Task\"") || to.getAttributes().getNamedItem("class").toString().equals("class=\"Sub-Process\"") || to.getAttributes().getNamedItem("class").toString().equals("class=\"Start Event\"")){
+					contentFunction = contentFunction + "<span class=\"application-img\">image:http://www.projectargus.eu/VirtOf2/images/ico16_arrow_next.gif </span> ";
+				}else if(to.getAttributes().getNamedItem("class").toString().equals("class=\"Data Object\"")){
+					contentFunction = contentFunction + "<span class=\"application-img\">image:http://www.iliumsoft.com/support/admin/images/gateway/shared-images/ico-pdf-export.png </span> ";
+				}
+
+				contentFunction = contentFunction +
 						"<span class=\"application-label\">" + documentName + "</a><br/>" +
 						"\n#end" +
 						"\n#if($doc == \"" + spaceName + "." + documentName + "\")" +
 						"IN:<br/>" + 
-						"\n<a href=\"" + taskName + "\"><span class=\"application-img\">image:http://www.iliumsoft.com/support/admin/images/gateway/shared-images/ico-pdf-export.png </span> " +
+						"\n<a href=\"" + taskName + "\"> ";
+
+				if(to.getAttributes().getNamedItem("class").toString().equals("class=\"Task\"") || to.getAttributes().getNamedItem("class").toString().equals("class=\"Sub-Process\"") || to.getAttributes().getNamedItem("class").toString().equals("class=\"Start Event\"")){
+					contentFunction = contentFunction + "<span class=\"application-img\">image:http://www.projectargus.eu/VirtOf2/images/ico16_arrow_next.gif </span>";
+				}else if(to.getAttributes().getNamedItem("class").toString().equals("class=\"Data Object\"")){
+					contentFunction = contentFunction + "<span class=\"application-img\">image:http://www.iliumsoft.com/support/admin/images/gateway/shared-images/ico-pdf-export.png </span>";
+				}
+
+
+				contentFunction = contentFunction +
 						"<span class=\"application-label\">" + taskName + "</a><br/>" +
 						"\n#end" ;
 
@@ -102,8 +119,9 @@ public class Panels {
 				"\n" +
 				"\n#panelfooter()" +
 				"\n" +
-				"\n{{/html}}" +
+				"\n{{/html}}"+
 				"\n{{/velocity}}";
+
 		/*
 		"{{velocity}}"+
 		"\n{{html wiki=\"true\"}}" +
@@ -235,7 +253,7 @@ public class Panels {
 		object.appendChild(className);
 
 		Element guid = newDocument.createElement("guid");
-	//	guid.setTextContent("132f9db7-d133-4a1e-837b-0a4506931b32");
+		//	guid.setTextContent("132f9db7-d133-4a1e-837b-0a4506931b32");
 		object.appendChild(guid);
 
 		Element classObject = newDocument.createElement("class");

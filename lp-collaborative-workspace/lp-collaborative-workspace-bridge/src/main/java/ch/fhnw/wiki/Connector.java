@@ -191,7 +191,7 @@ public class Connector {
 									"#foreach($user in $users)\n"+ 
 									"#if($xwiki.getUser($user).isUserInGroup(\"XWiki." + to3.getAttributes().getNamedItem("instance").toString().replaceAll("instance=\"", "").replaceAll("\"", "") + "\"))\n"+ 
 									"#set($email = $xwiki.getUser($user).getEmail())\n"+
-									"#set($result = $xwiki.mailsender.sendTextMessage(\"no-reply@xwiki.com\", $email, \"IT'S YOUR TIME TO DO THE JOB\", \"Take care of this task: http://localhost:8080/xwiki/bin/view/" + spaceName + "/" + from3.getAttributes().getNamedItem("instance").toString().replaceAll("instance=\"", "").replaceAll("\"", "").replaceAll(" ", "+") +"\nBest Regards.\"))\n"+
+									"#set($result = $xwiki.mailsender.sendTextMessage(\"no-reply@xwiki.com\", $email, \"IT'S YOUR TIME TO DO THE JOB\", \"Take care of this task: \n\nhttp://localhost:8080/xwiki/bin/view/" + spaceName + "/" + from3.getAttributes().getNamedItem("instance").toString().replaceAll("instance=\"", "").replaceAll("\"", "").replaceAll(" ", "+") +"\nBest Regards.\"))\n"+
 									"#if($result == -1)\n"+
 									"{{error}}A problem occurred while sending the mail.{{/error}}\n"+
 									"#else\n"+
@@ -238,7 +238,7 @@ public class Connector {
 									"#foreach($user in $users)\n"+ 
 									"#if($xwiki.getUser($user).isUserInGroup(\"XWiki." + to3.getAttributes().getNamedItem("instance").toString().replaceAll("instance=\"", "").replaceAll("\"", "") + "\"))\n"+ 
 									"#set($email = $xwiki.getUser($user).getEmail())\n"+
-									"#set($result = $xwiki.mailsender.sendTextMessage(\"no-reply@xwiki.com\", $email, \"IT'S YOUR TIME TO DO THE JOB\", \"Take care of this task: " + from3.getAttributes().getNamedItem("instance").toString().replaceAll("instance=\"", "").replaceAll("\"", "") +"\nBest Regards.\"))\n"+
+									"#set($result = $xwiki.mailsender.sendTextMessage(\"no-reply@xwiki.com\", $email, \"IT'S YOUR TIME TO DO THE JOB\", \"Take care of this task: \n\n" + from3.getAttributes().getNamedItem("instance").toString().replaceAll("instance=\"", "").replaceAll("\"", "") +"\nBest Regards.\"))\n"+
 									"#if($result == -1)\n"+
 									"{{error}}A problem occurred while sending the mail.{{/error}}\n"+
 									"#else\n"+
@@ -266,7 +266,7 @@ public class Connector {
 
 									"\n#if($xwiki.hasAccessLevel('admin')) " +
 									"\n\n-------------------------------\n\n" +
-									"FOR ADMIN ONLY:" + textAnswer.getTextContent() + " : [[" + pagina + ">>doc:" + pagina + "||title=\"Next Step\"]]" +
+									"FOR ADMIN ONLY: " + textAnswer.getTextContent() + " : [[" + pagina + ">>doc:" + pagina + "||title=\"Next Step\"]]" +
 									"\n#end" +
 
 									"\n{{/html}}\n\n"  ;
