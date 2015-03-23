@@ -1433,13 +1433,13 @@ public class BPMN {
 					for (int j =0; j<elementi.getLength();j++){
 						if(elementi.item(j).getAttributes().getNamedItem("name").toString().equals("name=\"Description\"")){
 							// insert adoxx description
-							testContent = testContent + "**Description:** " +  elementi.item(j).getTextContent() + "--------------------------------<br/><br/>";
+							testContent = testContent + "**Description:** " +  elementi.item(j).getTextContent() + "<br/><br/>\n\n--------------------------------";
 
 							//}else if(elementi.item(j).getAttributes().getNamedItem("name").toString().equals("name=\"Comment\"")){
 							// inserts adoxx comments
 							//contenuto = contenuto + "\n\n**Comment:** " + elementi.item(j).getTextContent() + "<br/><br/>";
 						}else if(elementi.item(j).getAttributes().getNamedItem("name").toString().equals("name=\"Open questions\"")){
-							testContent = testContent + "\n\n**Open Questions:** " + elementi.item(j).getTextContent() + "--------------------------------<br/><br/>";
+							testContent = testContent + "\n\n**Open Questions:** " + elementi.item(j).getTextContent() + "<br/><br/>\n\n--------------------------------";
 						}
 
 						/**

@@ -100,9 +100,9 @@ public class Panels {
 						"IN:<br/>" + 
 						"\n<a href=\"" + taskName + "\"> ";
 
-				if(to.getAttributes().getNamedItem("class").toString().equals("class=\"Task\"") || to.getAttributes().getNamedItem("class").toString().equals("class=\"Sub-Process\"") || to.getAttributes().getNamedItem("class").toString().equals("class=\"Start Event\"")){
+				if(from.getAttributes().getNamedItem("class").toString().equals("class=\"Task\"") || to.getAttributes().getNamedItem("class").toString().equals("class=\"Sub-Process\"") || to.getAttributes().getNamedItem("class").toString().equals("class=\"Start Event\"")){
 					contentFunction = contentFunction + "<span class=\"application-img\">image:http://www.projectargus.eu/VirtOf2/images/ico16_arrow_next.gif </span>";
-				}else if(to.getAttributes().getNamedItem("class").toString().equals("class=\"Data Object\"")){
+				}else if(from.getAttributes().getNamedItem("class").toString().equals("class=\"Data Object\"")){
 					contentFunction = contentFunction + "<span class=\"application-img\">image:http://www.iliumsoft.com/support/admin/images/gateway/shared-images/ico-pdf-export.png </span>";
 				}
 
