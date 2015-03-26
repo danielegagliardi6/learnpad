@@ -145,6 +145,10 @@ public class MainWindow extends JFrame {
 				directoryBPMN = fileChooserBPMN.getSelectedFile().toString();
 				txtFldDirectory.setText(directoryBPMN);
 				btnTranslator.setEnabled(true);
+				txtSpace.setText(fileChooserBPMN.getSelectedFile().getName().replaceAll(".xml", ""));
+				chckbxSpaceName.setSelected(false);
+				txtSpace.setEnabled(true);
+				txtSpace.setEditable(true);
 			}
 		});
 
