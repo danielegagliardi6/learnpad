@@ -33,7 +33,7 @@ public class Packager {
 		DocumentBuilder db = dbf.newDocumentBuilder();
 
 		Document doc = db.newDocument();
-		
+
 		//get package tag
 		Element rootPackage = doc.createElement("package");
 		doc.appendChild(rootPackage);

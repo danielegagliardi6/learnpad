@@ -43,9 +43,9 @@ public class UserCreator {
 		{
 			public InputSource resolveEntity(String publicId, String systemId)
 					throws SAXException, IOException
-					{
+			{
 				return new InputSource(new StringReader(""));
-					}
+			}
 		});
 
 		//Document docCompany = docBuilderCompany.parse(directoryCompany.getSelectedFile());
@@ -965,35 +965,35 @@ public class UserCreator {
 				Element nameClass4 = newDocument.createElement("name");
 				nameClass4.setTextContent("XWiki.XWikiUsers");
 				classObject4.appendChild(nameClass4);				
-				
+
 				Element customClass = newDocument.createElement("customClass");
 				classObject4.appendChild(customClass);				
-				
+
 				Element customMappingClass4 = newDocument.createElement("customMapping");
 				classObject4.appendChild(customMappingClass4);				
-				
+
 				Element defaultViewSheetClass4 = newDocument.createElement("defaultViewSheet");
 				classObject4.appendChild(defaultViewSheetClass4);				
-				
+
 				Element defaultEditSheetClass4 = newDocument.createElement("defaultEditSheet");
 				classObject4.appendChild(defaultEditSheetClass4);				
-				
+
 				Element defaultWebClass4 = newDocument.createElement("defaultWeb");
 				classObject4.appendChild(defaultWebClass4);				
-				
+
 				Element nameFieldClass4 = newDocument.createElement("nameField");
 				classObject4.appendChild(nameFieldClass4);				
-				
+
 				Element validationScriptClass4 = newDocument.createElement("validationScript");
 				classObject4.appendChild(validationScriptClass4);				
-				
-				
+
+
 				Element accessibility = newDocument.createElement("accessibility");
 
 				Element disabledAcc = newDocument.createElement("disabled");
 				disabledAcc.setTextContent("0");
 				accessibility.appendChild(disabledAcc);
-				
+
 				Element displayFormTypeAcc = newDocument.createElement("displayFormType");
 				displayFormTypeAcc.setTextContent("select");
 				accessibility.appendChild(displayFormTypeAcc);
@@ -1001,7 +1001,7 @@ public class UserCreator {
 				Element displayTypeAcc = newDocument.createElement("displayType");
 				displayTypeAcc.setTextContent("yesno");
 				accessibility.appendChild(displayTypeAcc);
-				
+
 				Element nameAcc = newDocument.createElement("name");
 				nameAcc.setTextContent("accessibility");
 				accessibility.appendChild(nameAcc);
@@ -1021,16 +1021,16 @@ public class UserCreator {
 				Element classTypeAcc = newDocument.createElement("classType");
 				classTypeAcc.setTextContent("com.xpn.xwiki.objects.classes.BooleanClass");
 				accessibility.appendChild(classTypeAcc);
-				
+
 				classObject4.appendChild(accessibility);
-				
-				
+
+
 				Element active = newDocument.createElement("active");
 
 				Element disabledActive = newDocument.createElement("disabled");
 				disabledActive.setTextContent("0");
 				active.appendChild(disabledActive);
-				
+
 				Element displayFormTypeActive = newDocument.createElement("displayFormType");
 				displayFormTypeActive.setTextContent("select");
 				active.appendChild(displayFormTypeActive);
@@ -1038,7 +1038,7 @@ public class UserCreator {
 				Element displayTypeActive = newDocument.createElement("displayType");
 				displayTypeActive.setTextContent("active");
 				active.appendChild(displayTypeActive);
-				
+
 				Element nameActive = newDocument.createElement("name");
 				nameActive.setTextContent("active");
 				active.appendChild(nameActive);
@@ -1058,7 +1058,7 @@ public class UserCreator {
 				Element classTypeActive = newDocument.createElement("classType");
 				classTypeActive.setTextContent("com.xpn.xwiki.objects.classes.BooleanClass");
 				active.appendChild(classTypeActive);				
-				
+
 				classObject4.appendChild(active);
 
 				Element address = newDocument.createElement("address");
@@ -1082,7 +1082,7 @@ public class UserCreator {
 				Element rowsAdd = newDocument.createElement("rows");
 				rowsAdd.setTextContent("3");
 				address.appendChild(rowsAdd);
-				
+
 				Element sizeAdd = newDocument.createElement("size");
 				sizeAdd.setTextContent("40");
 				address.appendChild(sizeAdd);
