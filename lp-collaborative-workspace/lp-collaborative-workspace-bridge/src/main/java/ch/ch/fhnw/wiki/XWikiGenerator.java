@@ -22,13 +22,12 @@ import ch.fhnw.usergroup.UserCreator;
 
 public class XWikiGenerator {
 
-
 	/**
-	 * 
+	 * This class receive as an input the location of the XML file from ADOxx and based on the contents return a string for the console thread
 	 * @param directoryBPMN
 	 * @param xwikiUser
 	 * @param spaceName
-	 * @return
+	 * @return String text for the main window console
 	 * @throws Exception
 	 */
 	public static String xWikiGenerator(JFileChooser directoryBPMN, String xwikiUser, String spaceName) throws Exception{
@@ -46,9 +45,9 @@ public class XWikiGenerator {
 		{
 			public InputSource resolveEntity(String publicId, String systemId)
 					throws SAXException, IOException
-					{
+			{
 				return new InputSource(new StringReader(""));
-					}
+			}
 		});
 
 		Document doc = docBuilder.parse(directoryBPMN.getSelectedFile());
@@ -98,7 +97,6 @@ public class XWikiGenerator {
 				//NodeList connector = instances.getElementsByTagName("CONNECTOR");
 				System.out.println(Panels.PanelsGenerator(connector, directoryBPMN, xwikiUser, spaceName) );
 
-
 			}
 			else if(model.getAttributes().getNamedItem("modeltype").toString().equals("modeltype=\"CMMN model\"")){
 
@@ -109,14 +107,14 @@ public class XWikiGenerator {
 
 				System.out.println( "SENTRY MODEL:" );
 				System.out.println("\n");
-				
+
 			}else if(model.getAttributes().getNamedItem("modeltype").toString().equals("modeltype=\"BPMN + CMMN model\"")){
-				
+
 				System.out.println("BPMN + CMMN model are not currently being translated.");
-				
+
 			}
-			
-			
+
+
 		}
 
 		//LAST STEP BEFORE THE PACKAGING OF THE XWIKI ARCHIVE

@@ -183,7 +183,7 @@ public class Connector {
 						if (l==0){
 							// if l==0 it means that this is the first time 
 							//test = "mailto: " + to3.getAttributes().getNamedItem("instance").toString().replaceAll("instance=\"", "").replaceAll("\"", "");
-							newUser = "{{/html}}\n" +
+							newUser = "{{/html}}\n\n" +
 
 									"#if(\"$!{request.action}\" == 'send_mail' && \"$!{request.lastname}\" == '') \n"+
 									"## Check submission and honey pot.\n"+
@@ -191,7 +191,7 @@ public class Connector {
 									"#foreach($user in $users)\n"+ 
 									"#if($xwiki.getUser($user).isUserInGroup(\"XWiki." + to3.getAttributes().getNamedItem("instance").toString().replaceAll("instance=\"", "").replaceAll("\"", "") + "\"))\n"+ 
 									"#set($email = $xwiki.getUser($user).getEmail())\n"+
-									"#set($result = $xwiki.mailsender.sendTextMessage(\"no-reply@xwiki.com\", $email, \"IT'S YOUR TIME TO DO THE JOB\", \"Take care of this task: \n\nhttp://localhost:8080/xwiki/bin/view/" + spaceName + "/" + from3.getAttributes().getNamedItem("instance").toString().replaceAll("instance=\"", "").replaceAll("\"", "").replaceAll(" ", "+") +"\nBest Regards.\"))\n"+
+									"#set($result = $xwiki.mailsender.sendTextMessage(\"no-reply@xwiki.com\", $email, \"IT'S YOUR TIME TO DO THE JOB\", \"Take care of this task: \n\nhttp://localhost:8080/xwiki/bin/view/" + spaceName.replaceAll(" ", "+") + "/" + from3.getAttributes().getNamedItem("instance").toString().replaceAll("instance=\"", "").replaceAll("\"", "").replaceAll(" ", "+") +"\nBest Regards.\"))\n"+
 									"#if($result == -1)\n"+
 									"{{error}}A problem occurred while sending the mail.{{/error}}\n"+
 									"#else\n"+
